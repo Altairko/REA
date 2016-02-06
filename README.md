@@ -9,9 +9,11 @@
 * 2.0.7
 
 ### Установка Phalcon:
+
 - ### Phalcon для Windows 
   * Скачать [библиотеку](http://phalconphp.com/ru/download)
   * Добавить в конце php.ini:  ```extension=php_phalcon.dll```
+  
 - ### Phalcon для Ubuntu
   * Выполнить ```$ sudo apt-get install php5-dev libpcre3-dev gcc make php5-mysql```
   * Клонирование исходников Phalcon ```$ git clone --depth=1 git://github.com/phalcon/cphalcon.git```
@@ -23,6 +25,7 @@
 - Клнируем репозитарий в удобное место ```$ git clone https://github.com/Altairko/REA.git```
 - Редактируем подключения к БД в файле ```/app/config/config.php```
 - Для автоматической генерации Контроллеров и Моделей используем [Phalcon Developer Tools](http://docs.phalconphp.ru/ru/latest/reference/tools.html)
+
 ### Реализовано: 
   - Перенос с SimplePHP
   - Выбор и адаптация шаблона
