@@ -22,7 +22,8 @@
   * Ubuntu/Debian с apache2: создайте файл 30-phalcon.ini в /etc/php5/apache2/conf.d/ со следующим содержимым: ```extension=phalcon.so```
 
 ### Установка CMS:
-- Клнируем репозитарий в удобное место ```$ git clone https://github.com/Altairko/REA.git```
+- Клонируем репозитарий в удобное место ```$ git clone https://github.com/Altairko/REA.git```
+- Импортируем схему БД
 - Редактируем подключения к БД в файле ```/app/config/config.php```
 - Для автоматической генерации Контроллеров и Моделей используем [Phalcon Developer Tools](http://docs.phalconphp.ru/ru/latest/reference/tools.html)
 
