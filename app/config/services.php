@@ -106,3 +106,7 @@ $di->setShared('mailer', function() {
 
     return $service->mailer();
 });
+
+$di->set('router', function () {
+    return require __DIR__ . '/routes.php';
+});

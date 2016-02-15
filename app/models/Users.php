@@ -1,6 +1,8 @@
 <?php
 
-use Phalcon\Mvc\Model\Validator\Email as Email;
+use Phalcon\Mvc\Model;
+use Phalcon\Mvc\Model\Validator\Email as EmailValidator;
+use Phalcon\Mvc\Model\Validator\Uniqueness as UniquenessValidator;
 
 class Users extends \Phalcon\Mvc\Model
 {
@@ -59,6 +61,12 @@ class Users extends \Phalcon\Mvc\Model
      */
     public $phone;
 
+     /**
+     *
+     * @var string
+     */
+    public $sex;
+    
     /**
      * Validations and business logic
      *
@@ -66,14 +74,14 @@ class Users extends \Phalcon\Mvc\Model
      */
     public function validation()
     {
-        $this->validate(new Email(array(
-                    'field' => 'email'
-                )));
-        $this->validate(new Uniqueness(array(
+        $this->validate(new EmailValidator(array(
+            'field' => 'email'
+        )));
+         $this->validate(new UniquenessValidator(array(
                     'field' => 'email',
                     'message' => 'Извините, данный email зарегистрирован другим пользователем'
                 )));
-        $this->validate(new Uniqueness(array(
+         $this->validate(new UniquenessValidator(array(
                     'field' => 'username',
                     'message' => 'Извините, данный логин зарегистрирован другим пользователем'
                 )));

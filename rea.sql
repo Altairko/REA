@@ -1,13 +1,13 @@
 # ************************************************************
 # Sequel Pro SQL dump
-# Версия 4500
+# Версия 4499
 #
 # http://www.sequelpro.com/
 # https://github.com/sequelpro/sequelpro
 #
 # Адрес: localhost (MySQL 5.5.42)
 # Схема: rea
-# Время создания: 2016-02-06 22:14:24 +0000
+# Время создания: 2016-02-15 19:27:46 +0000
 # ************************************************************
 
 
@@ -80,6 +80,7 @@ CREATE TABLE `users` (
   `active` char(1) DEFAULT NULL,
   `class` char(2) DEFAULT NULL,
   `phone` varchar(18) DEFAULT NULL,
+  `sex` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
