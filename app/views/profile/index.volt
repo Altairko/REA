@@ -23,12 +23,10 @@
 	    </div>
 	    <div id="myTabContent" class="tab-content">
 	        <div class="tab-pane fade active in" id="personal">
-	            <span style="font-size: 14pt;">Возраст: {{prof_age}}</span>
-	            <br>
 	            <span style="font-size: 14pt;">Пол: {%if prof_sex == "" %}N/A{% elseif prof_sex == 0 %}Мужской
                     {% elseif prof_sex == 1%}Женский{% endif %}</span>
 	            <br>
-	            <span style="font-size: 14pt;">Дней на трекере: {{prof_sex}}</span>
+	            <span style="font-size: 14pt;">Дней на сайте: {{prof_day}}</span>
 	            <br>
 	            <span style="font-size: 14pt;">Карма: 100500</span>
 	            <br>
@@ -36,6 +34,8 @@
 	        </div>
 	        <div class="tab-pane fade" id="contacts">
 	            <span style="font-size: 14pt;">Email: <a href="mailto:{{prof_email}}">{{prof_email}}</a></span>
+	            <br>
+                <span style="font-size: 14pt;">Телефон: {{prof_phone}}</span>
 	            <br>
 	            <span style="font-size: 14pt;">Telegram: <a href=""></a></span>
 	            <br>
