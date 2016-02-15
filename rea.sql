@@ -7,7 +7,7 @@
 #
 # Адрес: localhost (MySQL 5.5.42)
 # Схема: rea
-# Время создания: 2016-02-15 19:27:46 +0000
+# Время создания: 2016-02-15 19:31:39 +0000
 # ************************************************************
 
 
@@ -80,7 +80,7 @@ CREATE TABLE `users` (
   `active` char(1) DEFAULT NULL,
   `class` char(2) DEFAULT NULL,
   `phone` varchar(18) DEFAULT NULL,
-  `sex` tinyint(1) NOT NULL,
+  `sex` varchar(1) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
