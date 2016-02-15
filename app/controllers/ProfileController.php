@@ -30,10 +30,7 @@ class ProfileController extends ControllerBase
 			$profile_sale=Buyers::findByid_users($this->dispatcher->getParam("id"));
             $this->view->prof_sex=$profile->sex;
 			$this->view->prof_sale=count($profile_comments);
-            $now = date("Y-m-d H:i:s");
-            $date_reg = $profile->created_at;
-            $day = intval((strtotime($now) - strtotime($date_reg))/(60*60*24));
-            $this->view->prof_day=$day;
+            $this->view->prof_day = intval((strtotime(date("Y-m-d H:i:s")) - strtotime($profile->created_at))/(60*60*24));
 		}
 	}
 	public function editAction()
