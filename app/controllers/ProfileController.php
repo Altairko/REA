@@ -56,7 +56,6 @@ class ProfileController extends ControllerBase
 	            $user = Users::findFirst($auth['id']);
 	            $old_password = sha1($this->request->getPost('old_password'));
 	            $password = $user->password;
-	            //var_dump($password);
 	            if (($old_password == $password) && ($old_password != '')){
 	            	if ($this->request->getPost('password') != ''){
 	            		$user->password = $this->request->getPost('password');
