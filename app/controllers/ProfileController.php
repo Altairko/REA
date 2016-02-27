@@ -35,6 +35,21 @@ class ProfileController extends ControllerBase
 	}
 	public function editAction()
 	{
-		
+		$auth = $this->session->get('auth');
+		$profile=$auth['id'];
+		$get_id = $this->dispatcher->getParam("id");
+		if ($profile != $get_id){
+			$this->flash->error("Нет прав редактирования!");
+			$this->view->prof_user = false;
+		}
+		else{
+			$this->view->prof_user = true;
+			$this->view->prof_username = $profile->username;
+			$this->view->prof_email = $profile->email;
+			$this->view->prof_name = $profile->name;
+			$this->view->prof_phone = $profile->phone;
+			$profile_sale = Buyers::findByid_users($auth['id']);
+            $this->view->prof_sex = $profile->sex;
+		}
 	}
 }

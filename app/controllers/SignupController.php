@@ -14,7 +14,6 @@ class SignupController extends ControllerBase
     }
 	public function indexAction()
 	{
-		
 		if ($this->request->isPost()) {
 		    $username = $this->request->getPost('username', 'alphanum');
 		    $email = $this->request->getPost('email', 'email');
@@ -29,10 +28,9 @@ class SignupController extends ControllerBase
 		    $user->name = $name;
 		    $user->created_at = new Phalcon\Db\RawValue('now()');
 		    $user->active = 'Y';
-		    $user->class = '1';		    
+		    $user->class = '1';
 		    $user->phone = $phone;
 
-		
 		    if ($user->save() == false) {
 		        foreach ($user->getMessages() as $message) {
 		            $this->flash->error((string) $message);
@@ -43,11 +41,7 @@ class SignupController extends ControllerBase
 		        $this->flash->success('Спасибо за регистрацию, пожалуйста войдите в вашу учетную запись');
 		        return $this->view->pick("login/index");
 		    }
-		}  
-		 
+		}
 	}
-	
-	
-	
 }
 

@@ -1,17 +1,17 @@
-{{content()}}
-	{% if prof_user %}
-	<div class="panel panel-default col-md-9">
-	{{prof_users}}
+<?php echo $this->getContent(); ?>
+	<?php if ($prof_user) { ?>
+	<div class="panel panel-default col-md-9">	
+	<?php echo $prof_users; ?>
 	    <div style="text-align: center;">
-	        {% if prof_avatar%}
-	        <img src="{{prof_avatar}}" alt="avatar" class="img-circle avatar">
-	        {% else %}
+	        <?php if ($prof_avatar) { ?>
+	        <img src="<?php echo $prof_avatar; ?>" alt="avatar" class="img-circle avatar">
+	        <?php } else { ?>
 	        <img src="/img/noavatar.png" alt="avatar" class="img-circle avatar">
-	        {% endif %}
+	        <?php } ?>
 	        <br>
-	        <span style="color: #878787"><h4>@{{prof_username}}</h4></span>
+	        <span style="color: #878787"><h4>@<?php echo $prof_username; ?></h4></span>
 	        <hr>
-
+	
 	        <ul id="myTab" class="nav nav-tabs">
 	            <li class="active"><a href="#personal" data-toggle="tab"><i class="glyphicon glyphicon-user"></i>Личная
 	                информация</a></li>
@@ -23,19 +23,19 @@
 	    </div>
 	    <div id="myTabContent" class="tab-content">
 	        <div class="tab-pane fade active in" id="personal">
-	            <span style="font-size: 14pt;">Пол: {%if prof_sex == "" %}N/A{% elseif prof_sex == 0 %}Мужской
-                    {% elseif prof_sex == 1%}Женский{% endif %}</span>
+	            <span style="font-size: 14pt;">Пол: <?php if ($prof_sex == '') { ?>N/A<?php } elseif ($prof_sex == 0) { ?>Мужской
+                    <?php } elseif ($prof_sex == 1) { ?>Женский<?php } ?></span>
 	            <br>
-	            <span style="font-size: 14pt;">Дней на сайте: {{prof_day}}</span>
+	            <span style="font-size: 14pt;">Дней на сайте: <?php echo $prof_day; ?></span>
 	            <br>
 	            <span style="font-size: 14pt;">Карма: 100500</span>
 	            <br>
 	            <span style="font-size: 14pt;">Группа: VIP</span>
 	        </div>
 	        <div class="tab-pane fade" id="contacts">
-	            <span style="font-size: 14pt;">Email: <a href="mailto:{{prof_email}}">{{prof_email}}</a></span>
+	            <span style="font-size: 14pt;">Email: <a href="mailto:<?php echo $prof_email; ?>"><?php echo $prof_email; ?></a></span>
 	            <br>
-                <span style="font-size: 14pt;">Телефон: {{prof_phone}}</span>
+                <span style="font-size: 14pt;">Телефон: <?php echo $prof_phone; ?></span>
 	            <br>
 	            <span style="font-size: 14pt;">Telegram: <a href=""></a></span>
 	            <br>
@@ -48,12 +48,12 @@
 	            <span style="font-size: 14pt;">Skype: <a href="skype:"></a></span>
 	        </div>
 	        <div class="tab-pane fade" id="torrent">
-	            <span style="font-size: 14pt;">Количество предупреждений: {{prof_warning}}</span>
+	            <span style="font-size: 14pt;">Количество предупреждений: <?php echo $prof_warning; ?></span>
 	            <br>
-	            <span style="font-size: 14pt;">Оставил комментариев: {{prof_comments}}</span>
+	            <span style="font-size: 14pt;">Оставил комментариев: <?php echo $prof_comments; ?></span>
 	            <br>
-	            <span style="font-size: 14pt;">Свои раздачи: {{prof_torrents}}</span>
+	            <span style="font-size: 14pt;">Свои раздачи: <?php echo $prof_torrents; ?></span>
 	        </div>
 	    </div>
-    {% endif %}
+    <?php } ?>
 </div>

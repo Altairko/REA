@@ -11,4 +11,11 @@ $router->add(
         "action"     => "index"
     )
 );
+$router->add(
+    "/profile/edit/{id}",
+    array(
+        "controller" => "profile",
+        "action"     => "edit"
+    )
+);
 return $router;

@@ -31,29 +31,28 @@
                         </li>
                         <li><a href="blog.html">Blog</a></li> 
                         <li><a href="contact-us.html">Contact</a></li>
-                        {% if !session_user %}
+                        <?php if (!$session_user) { ?>
                         <li class="login">
                             <a data-toggle="modal" href="#loginForm"><i class="icon-lock"></i></a>
                         </li>
-                        {% else %}
+                        <?php } else { ?>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{name}} <i class="icon-angle-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $name; ?> <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
                                 <li><a href="/add">Добавить объявление</a></li>
-                                <li><a href="/profile/id/{{uid}}">Личный кабинет</a></li>
-                                <li><a href="/profile/edit/{{uid}}">Редактировать профиль</a></li>
+                                <li><a href="/profile/id/<?php echo $uid; ?>">Личный кабинет</a></li>
                                 <li><a href="/faq">FAQ</a></li>
                                 <li><a href="/login/exit">Выйти</a></li>
                             </ul>
                         </li>
-                        {% endif %}
-                    </ul>
+                        <?php } ?>
+                    </ul>        
                 </div><!--/.nav-collapse -->
             </div>
         </div>
     </header>
     <!-- /header -->
-{{ content() }}
+<?php echo $this->getContent(); ?>
 
 <!--Footer-->
 <footer id="footer">
@@ -70,13 +69,13 @@
                     <li><a href="#"><i class="icon-twitter"></i></a></li>
                     <li><a href="#"><i class="icon-pinterest"></i></a></li>
                     <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                    <li><a href="#"><i class="icon-google-plus"></i></a></li>
+                    <li><a href="#"><i class="icon-google-plus"></i></a></li>                       
                     <li><a href="#"><i class="icon-youtube"></i></a></li>
-                    <li><a href="#"><i class="icon-tumblr"></i></a></li>
+                    <li><a href="#"><i class="icon-tumblr"></i></a></li>                        
                     <li><a href="#"><i class="icon-dribbble"></i></a></li>
                     <li><a href="#"><i class="icon-rss"></i></a></li>
                     <li><a href="#"><i class="icon-github-alt"></i></a></li>
-                    <li><a href="#"><i class="icon-instagram"></i></a></li>
+                    <li><a href="#"><i class="icon-instagram"></i></a></li>                   
                 </ul>
             </div>
 
