@@ -58,7 +58,7 @@ class ProfileController extends ControllerBase
 	            $password = $user->password;
 	            if (($old_password == $password) && ($old_password != '')){
 	            	if ($this->request->getPost('password') != ''){
-	            		$user->password = $this->request->getPost('password');
+	            		$user->password = sha1($this->request->getPost('password'));
 	            	}
 	        		$user->id = $auth['id'];
 		            $user->email = $this->request->getPost('email');
