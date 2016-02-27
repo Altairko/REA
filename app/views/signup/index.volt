@@ -12,7 +12,7 @@
 
 <section id="registration-page" class="container">
     <form class="center" action='' method="POST">
-      <fieldset class="registration-form">    
+      <fieldset class="registration-form">
 
         <div class="control-group">
             <label class="control-label">Ф.И.О.</label>
@@ -37,7 +37,6 @@
                 <p class="help-block">(Обязательное поле)</p>
             </div>
         </div>
-		
 		<div class="control-group">
 	        <label class="control-label">Пароль</label>
             <div class="controls">
@@ -45,7 +44,6 @@
                 <p class="help-block">(Обязательное поле)</p>
             </div>
         </div>
-		
         <div class="control-group">
             <label class="control-label">Номер телефона</label>
             <div class="controls">

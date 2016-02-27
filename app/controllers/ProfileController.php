@@ -44,12 +44,37 @@ class ProfileController extends ControllerBase
 		}
 		else{
 			$this->view->prof_user = true;
+			$profile=Users::findFirst($this->dispatcher->getParam("id"));
 			$this->view->prof_username = $profile->username;
 			$this->view->prof_email = $profile->email;
 			$this->view->prof_name = $profile->name;
 			$this->view->prof_phone = $profile->phone;
-			$profile_sale = Buyers::findByid_users($auth['id']);
+			$profile_sale = Buyers::findByid_users($this->dispatcher->getParam("id"));
             $this->view->prof_sex = $profile->sex;
+            /*Если есть данные, то сохраняем*/
+            if ($this->request->isPost()) {
+	            $user = Users::findFirst($auth['id']);
+	            $old_password = sha1($this->request->getPost('old_password'));
+	            $password = $user->password;
+	            //var_dump($password);
+	            if (($old_password == $password) && ($old_password != '')){
+	            	if ($this->request->getPost('password') != ''){
+	            		$user->password = $this->request->getPost('password');
+	            	}
+	        		$user->id = $auth['id'];
+		            $user->email = $this->request->getPost('email');
+		            $user->phone = $this->request->getPost('phone');
+		            $user->sex = $this->request->getPost('sex');
+
+		            if (($user->update() == false) or ($old_password != $password)) {
+				        foreach ($user->getMessages() as $message) {
+				            $this->flash->error((string) $message);
+				        }
+				    } else {
+				    	$this->flash->success('Данные успешно сохранены');
+				    }
+	            }
+			}
 		}
 	}
 }
