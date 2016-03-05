@@ -3,11 +3,7 @@
 	<div class="panel panel-default col-md-9">
 	{{prof_users}}
 	    <div style="text-align: center;">
-	        {% if prof_avatar%}
-	        <img src="{{prof_avatar}}" alt="avatar" class="img-circle avatar">
-	        {% else %}
 	        <img src="/img/noavatar.png" alt="avatar" class="img-circle avatar">
-	        {% endif %}
 	        <br>
 	        <span style="color: #878787"><h4>@{{prof_username}}</h4></span>
 	        <hr>
@@ -17,7 +13,7 @@
 	                информация</a></li>
 	            <li class=""><a href="#contacts" data-toggle="tab"><i class="glyphicon glyphicon-briefcase"></i>Контакты</a>
 	            </li>
-	            <li class=""><a href="#torrent" data-toggle="tab"><i class="glyphicon glyphicon-cloud-download"></i>Torrent-профиль</a>
+	            <li class=""><a href="#сlassifieds" data-toggle="tab"><i class="glyphicon glyphicon-cloud-download"></i>Объявления</a>
 	            </li>
 	        </ul>
 	    </div>
@@ -28,31 +24,21 @@
 	            <br>
 	            <span style="font-size: 14pt;">Дней на сайте: {{prof_day}}</span>
 	            <br>
-	            <span style="font-size: 14pt;">Карма: 100500</span>
-	            <br>
-	            <span style="font-size: 14pt;">Группа: VIP</span>
+	            <span style="font-size: 14pt;">Группа: {{prof_class}}</span>
 	        </div>
 	        <div class="tab-pane fade" id="contacts">
 	            <span style="font-size: 14pt;">Email: <a href="mailto:{{prof_email}}">{{prof_email}}</a></span>
 	            <br>
                 <span style="font-size: 14pt;">Телефон: {{prof_phone}}</span>
 	            <br>
-	            <span style="font-size: 14pt;">Telegram: <a href=""></a></span>
-	            <br>
-	            <span style="font-size: 14pt;">VK: <a href=""></a></span>
-	            <br>
-	            <span style="font-size: 14pt;">Одноклассники: <a href=""></a></span>
-	            <br>
-	            <span style="font-size: 14pt;">FaceBook: <a href=""></a></span>
-		        <br>
 	            <span style="font-size: 14pt;">Skype: <a href="skype:"></a></span>
 	        </div>
-	        <div class="tab-pane fade" id="torrent">
-	            <span style="font-size: 14pt;">Количество предупреждений: {{prof_warning}}</span>
+	        <div class="tab-pane fade" id="сlassifieds">
+	            <span style="font-size: 14pt;">Количество объявлений: {{prof_warning}}</span>
 	            <br>
-	            <span style="font-size: 14pt;">Оставил комментариев: {{prof_comments}}</span>
+	            <span style="font-size: 14pt;">Открытые объявления: {{prof_comments}}</span>
 	            <br>
-	            <span style="font-size: 14pt;">Свои раздачи: {{prof_torrents}}</span>
+	            <span style="font-size: 14pt;">Закрытые объявления: {{prof_torrents}}</span>
 	        </div>
 	    </div>
     {% endif %}

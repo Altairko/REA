@@ -31,6 +31,8 @@ class ProfileController extends ControllerBase
             $this->view->prof_sex = $profile->sex;
 			$this->view->prof_sale = count($profile_comments);
             $this->view->prof_day = intval((strtotime(date("Y-m-d H:i:s")) - strtotime($profile->created_at))/(60*60*24));
+			$class = ClassUser::findFirst($profile->class);
+			$this->view->prof_class = $class->description;
 		}
 	}
 	public function editAction()

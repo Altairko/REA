@@ -11,26 +11,9 @@
                 <div class="nav-collapse collapse pull-right">
                     <ul class="nav">
                         <li class="active"><a href="/">Главная</a></li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="career.html">Career</a></li>
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="faq.html">FAQ</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="typography.html">Typography</a></li>
-                                <li><a href="registration.html">Registration</a></li>
-                                <li class="divider"></li>
-                                <li><a href="privacy.html">Privacy Policy</a></li>
-                                <li><a href="terms.html">Terms of Use</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="blog.html">Blog</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>
+                        <li><a href="/catalog">Каталог</a></li>
+                        <li><a href="/about">О нас</a></li>
+                        <li><a href="contact-us.html">Контакты</a></li>
                         {% if !session_user %}
                         <li class="login">
                             <a data-toggle="modal" href="#loginForm"><i class="icon-lock"></i></a>
@@ -68,15 +51,7 @@
                 <ul class="social pull-right">
                     <li><a href="#"><i class="icon-facebook"></i></a></li>
                     <li><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li><a href="#"><i class="icon-pinterest"></i></a></li>
-                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                    <li><a href="#"><i class="icon-google-plus"></i></a></li>
-                    <li><a href="#"><i class="icon-youtube"></i></a></li>
-                    <li><a href="#"><i class="icon-tumblr"></i></a></li>
-                    <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                    <li><a href="#"><i class="icon-rss"></i></a></li>
                     <li><a href="#"><i class="icon-github-alt"></i></a></li>
-                    <li><a href="#"><i class="icon-instagram"></i></a></li>
                 </ul>
             </div>
 
