@@ -22,8 +22,7 @@ class LoginController extends ControllerBase
 
 	public function indexAction()
 	{
-		if ($this->session->has("auth"))
-		{
+		if ($this->session->has("auth")) {
 
 			// Получение значения
 
@@ -40,10 +39,10 @@ class LoginController extends ControllerBase
 	private function _registerSession(Users $user)
 	{
 		$this->session->set('auth', array(
-				'id' => $user->id,
-				'username' => $user->username,
-				'name' => $user->name
-			));
+			'id' => $user->id,
+			'username' => $user->username,
+			'name' => $user->name
+		));
 	}
 
 
@@ -55,16 +54,14 @@ class LoginController extends ControllerBase
 	{
 
 		$response = new \Phalcon\Http\Response();
-		if ($this->request->isPost())
-		{
+		if ($this->request->isPost()) {
 			$email = $this->request->getPost('email');
 			$password = $this->request->getPost('password');
 			$user = Users::findFirst(array(
-					"(email = :email: OR username = :email:) AND password = :password: AND active = 'Y'",
-					'bind' => array('email' => $email, 'password' => sha1($password))
-				));
-			if ($user != false)
-			{
+				"(email = :email: OR username = :email:) AND password = :password: AND active = 'Y'",
+				'bind' => array('email' => $email, 'password' => sha1($password))
+			));
+			if ($user != false) {
 				$this->_registerSession($user);
 
 				return $response->redirect();

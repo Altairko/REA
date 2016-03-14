@@ -17,5 +17,9 @@ class CatalogController extends ControllerBase
 
     }
 
+	public function addAction(){
+		$this->tag->setTitle('Каталог | Добавить недвижимость');
+		parent::initialize();
+	}
 }
 
