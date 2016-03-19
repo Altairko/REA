@@ -14,7 +14,8 @@ class CatalogController extends ControllerBase
 
     public function indexAction()
     {
-
+		$products = Real::find();
+		$this->view->products = $products;
     }
 
 	public function addAction(){
@@ -50,6 +51,16 @@ class CatalogController extends ControllerBase
 			}
 		}
 
+	}
+
+	public function viewsAction(){
+		$products = Real::findFirst($this->dispatcher->getParam("id"));
+		$this->tag->setTitle('Каталог | '.$products->name);
+		parent::initialize();
+		$this->view->product = $products;
+		$author = Users::findFirst($products->user_id);
+		$this->view->author_name = $author->name;
+		$this->view->author_phone = $author->phone;
 	}
 }
 

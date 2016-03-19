@@ -20,7 +20,7 @@ $router->add(
 	)
 );
 $router->add(
-	"/catalog/{category}/{alias}",
+	"/catalog/views/{id}",
 	array(
 		"controller" => "catalog",
 		"action" => "views"
