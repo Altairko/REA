@@ -1,6 +1,6 @@
 <?php
 
-class Real extends \Phalcon\Mvc\Model
+class Category extends \Phalcon\Mvc\Model
 {
 
     /**
@@ -13,61 +13,13 @@ class Real extends \Phalcon\Mvc\Model
      *
      * @var integer
      */
-    public $user_id;
+    public $pid;
 
     /**
      *
      * @var string
      */
-    public $name;
-
-    /**
-     *
-     * @var string
-     */
-    public $price;
-
-    /**
-     *
-     * @var string
-     */
-    public $cover;
-
-    /**
-     *
-     * @var string
-     */
-    public $description;
-
-    /**
-     *
-     * @var integer
-     */
-    public $reserve;
-
-    /**
-     *
-     * @var string
-     */
-    public $category;
-
-    /**
-     *
-     * @var string
-     */
-    public $img2;
-
-    /**
-     *
-     * @var string
-     */
-    public $img3;
-
-    /**
-     *
-     * @var string
-     */
-    public $img4;
+    public $title;
 
     /**
      * Returns table name mapped in the model.
@@ -76,14 +28,14 @@ class Real extends \Phalcon\Mvc\Model
      */
     public function getSource()
     {
-        return 'real';
+        return 'category';
     }
 
     /**
      * Allows to query a set of records that match the specified conditions
      *
      * @param mixed $parameters
-     * @return Real[]
+     * @return Category[]
      */
     public static function find($parameters = null)
     {
@@ -94,7 +46,7 @@ class Real extends \Phalcon\Mvc\Model
      * Allows to query the first record that match the specified conditions
      *
      * @param mixed $parameters
-     * @return Real
+     * @return Category
      */
     public static function findFirst($parameters = null)
     {

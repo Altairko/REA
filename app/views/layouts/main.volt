@@ -22,7 +22,7 @@
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{name}} <i class="icon-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/add">Добавить объявление</a></li>
+                                <li><a href="/catalog/add">Добавить объявление</a></li>
                                 <li><a href="/profile/id/{{uid}}">Личный кабинет</a></li>
                                 <li><a href="/profile/edit/{{uid}}">Редактировать профиль</a></li>
                                 <li><a href="/faq">FAQ</a></li>
