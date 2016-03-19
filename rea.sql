@@ -1,13 +1,13 @@
 # ************************************************************
 # Sequel Pro SQL dump
-# Версия 4499
+# Версия 4529
 #
 # http://www.sequelpro.com/
 # https://github.com/sequelpro/sequelpro
 #
 # Адрес: localhost (MySQL 5.5.42)
 # Схема: rea
-# Время создания: 2016-02-15 19:31:39 +0000
+# Время создания: 2016-03-19 07:09:14 +0000
 # ************************************************************
 
 
@@ -37,6 +37,18 @@ CREATE TABLE `buyers` (
 
 
 
+# Дамп таблицы category
+# ------------------------------------------------------------
+
+CREATE TABLE `category` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(11) DEFAULT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 # Дамп таблицы class_user
 # ------------------------------------------------------------
 
@@ -53,6 +65,7 @@ CREATE TABLE `class_user` (
 
 CREATE TABLE `real` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT NULL,
   `name` varchar(100) NOT NULL DEFAULT '',
   `price` double(9,2) NOT NULL,
   `cover` text,
