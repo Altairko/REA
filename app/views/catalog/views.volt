@@ -15,9 +15,9 @@
     function delProd(){
         $.ajax({
             url: "/catalog/delete/{{ id }}",
-            success: function(data){
+            success: function (data) {
                 window.location.assign("/catalog")
             }
         });
-    };
+    }
 </script>
