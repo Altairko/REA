@@ -26,4 +26,18 @@ $router->add(
 		"action" => "views"
 	)
 );
+$router->add(
+	"/catalog/edit/{id}",
+	array(
+		"controller" => "catalog",
+		"action" => "edit"
+	)
+);
+$router->add(
+	"/catalog/delete/{id}",
+	array(
+		"controller" => "catalog",
+		"action" => "delete"
+	)
+);
 return $router;
