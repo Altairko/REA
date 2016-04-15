@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/sl-slide.css">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+    <script type="text/javascript" src="/js/jquery.fancybox.js?v=2.1.5"></script>
+
 
     <script src="/js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 
@@ -40,6 +43,11 @@
 <script src="/js/jquery.maskedinput.min.js" type="text/javascript"></script>
 <!-- /Required javascript files for Slider -->
 <!-- SL Slider -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(".fancybox").fancybox();
+    });
+</script>
 <script type="text/javascript"> 
 $(function() {
     var Page = (function() {
@@ -72,14 +80,14 @@ $(function() {
 });
 </script>
 <!-- /SL Slider -->
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
 <script type="text/javascript">
 jQuery(function($){
    $("#phone").mask("+7 (999) 999-9999");
 });
+tinymce.init({
+    selector:'textarea'
+});
 </script>
-<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-<script>tinymce.init({
-        selector:'textarea'
-    });</script>
 </body>
 </html>

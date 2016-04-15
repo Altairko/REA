@@ -65,6 +65,8 @@ class CatalogController extends ControllerBase
 		$author = Users::findFirst($products->user_id);
 		$this->view->author_name = $author->name;
 		$this->view->author_phone = $author->phone;
+		$this->view->author_email = $author->email;
+		$this->view->author_day = intval((strtotime(date("Y-m-d H:i:s")) - strtotime($author->created_at)) / (60 * 60 * 24));
 	}
 
 	public function editAction()

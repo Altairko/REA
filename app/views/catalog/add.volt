@@ -48,11 +48,11 @@
                 <div class="control-group">
                     <label class="control-label">Дополнительные фото</label>
                     <div class="controls">
-                        <input type="text" class="form-control" name="img1">
-                        <br>
                         <input type="text" class="form-control" name="img2">
                         <br>
                         <input type="text" class="form-control" name="img3">
+                        <br>
+                        <input type="text" class="form-control" name="img4">
                     </div>
                 </div>
                 <div class="control-group">
